@@ -11,7 +11,6 @@ yaml-cpp
 
 # Third party dependencies
 target_link_libraries(mocap_publisher PRIVATE
-ViconDataStreamSDK_lib
 fastcdr 
 fastrtps
 )
