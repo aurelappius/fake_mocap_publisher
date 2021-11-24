@@ -13,4 +13,3 @@ find_package(yaml-cpp CONFIG REQUIRED)
 
 add_subdirectory(lib)
 add_subdirectory(app)
-add_subdirectory(tests)
