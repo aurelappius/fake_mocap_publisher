@@ -10,7 +10,7 @@
 #include <string>
 #include <vector>
 
-#include "Mocap_msg.h"
+#include "../../lib/communication_lib/raptor_msgs/cpp_msgs/msgs/Mocap_msg.h"
 #include "Mocap_msgPubSubTypes.h"
 #include "domain_participant.h"
 #include "publisher.h"
@@ -49,10 +49,10 @@ int main(int argc, char *argv[]) {
                          dp.participant());
 
   // mocap_pub.init();
-  idl_msg::Mocap_msg msg;
-  msg.position().x() = 1;
-  msg.position().y() = 1;
-  msg.position().z() = 1;
+  cpp_msg::Mocap_msg msg;
+  msg.position.x = 1;
+  msg.position.y = 1;
+  msg.position.z = 1;
 
   // cpp_msg::Mocap_msg msg;
   // msg.position.x = 1.0;
@@ -63,6 +63,7 @@ int main(int argc, char *argv[]) {
   // msg.orientation.yaw = 0.0;
 
   while (true) {
+    std::cout << "publishing" << std::endl;
     mocap_pub.publish(msg);
   }
 
